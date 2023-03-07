@@ -25,11 +25,11 @@ export function HabitDay({date, amountOfHabits = 0, amountCompleted = 0, ...rest
     <TouchableOpacity
       className={clsx("border-2 rounded-lg m-1", {
         ["bg-zinc-900 border-zinc-800"] : amountAccomplishedPertentage === 0,
-        ["bg-violet-900 border-violet-700"] : amountAccomplishedPertentage > 0 && amountAccomplishedPertentage <= 20,
-        ["bg-violet-800 border-violet-600"] : amountAccomplishedPertentage > 20 && amountAccomplishedPertentage <= 40,
-        ["bg-violet-700 border-violet-500"] : amountAccomplishedPertentage > 40 && amountAccomplishedPertentage <= 60,
-        ["bg-violet-600 border-violet-500"] : amountAccomplishedPertentage > 60 && amountAccomplishedPertentage <= 80,
-        ["bg-violet-500 border-violet-400"] : amountAccomplishedPertentage > 80,
+        ["bg-violet-900 border-violet-700"] : amountAccomplishedPertentage > 0 && amountAccomplishedPertentage < 20,
+        ["bg-violet-800 border-violet-600"] : amountAccomplishedPertentage >= 20 && amountAccomplishedPertentage < 40,
+        ["bg-violet-700 border-violet-500"] : amountAccomplishedPertentage >= 40 && amountAccomplishedPertentage < 60,
+        ["bg-violet-600 border-violet-500"] : amountAccomplishedPertentage >= 60 && amountAccomplishedPertentage < 80,
+        ["bg-violet-500 border-violet-400"] : amountAccomplishedPertentage >= 80,
         ["border-white border-4"]: isCurrentDay
       })}
       style={{ width: DAY_SIZE, height: DAY_SIZE }}
